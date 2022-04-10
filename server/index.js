@@ -18,7 +18,9 @@ io.on('connection', (socket) => {
 
     socket.on('message', (message) =>     {
         console.log(message);
-        io.emit('message', `${socket.id.substr(0,2)} said ${message}` );   
+        io.emit('message', `${socket.id.substr(0,2)} said ${message}` );  
+        console.log(socket.id) 
+        
     });
 });
 
@@ -30,22 +32,6 @@ app.get('/', (req, res) =>
 server.listen(80, '10.1.1.198', () => {
     console.log('server launched');
 });
-
-
-// Regular Websockets
-
-// const WebSocket = require('ws')
-// const server = new WebSocket.Server({ port: '8080' })
-
-// server.on('connection', socket => { 
-
-//   socket.on('message', message => {
-
-//     socket.send(`Roger that! ${message}`);
-
-//   });
-
-// });
 
 
  
