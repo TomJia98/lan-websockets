@@ -42,10 +42,12 @@ changeLight.addEventListener('click', () => {
 socket.on('lightChanged', (isLight) => {
     lightRN = isLight
     if (isLight === 0) { 
+        document.querySelector('#box').classList.remove('lightOn')
         document.querySelector('#box').classList.add('lightOff')
         console.log('light changed to off')
 
     } else if (isLight === 1) {
+        document.querySelector('#box').classList.remove('lightOff')
         document.querySelector('#box').classList.add('lightOn')
         console.log('light changed to on')
 
