@@ -39,13 +39,15 @@ changeLight.addEventListener('click', () => {
 })
 
 
-socket.on('lightChanged', (light) => {
-    lightRN = light
+socket.on('lightChanged', (isLight) => {
+    lightRN = isLight
     if (light === 0) { 
         document.querySelector('#box').classList.add('lightOff')
+        console.log('light changed to off')
 
-    } else if (light === 1) {
+    } else if (isLight === 1) {
         document.querySelector('#box').classList.add('lightOn')
+        console.log('light changed to off')
 
     }
 console.log('light has been pressed')
