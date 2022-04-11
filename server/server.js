@@ -29,21 +29,24 @@ io.emit('lightStart', LED.readSync())
         
     })
     
-    socket.on("light", (isLight) => {
+    socket.on("lightClicked", (isLight) => {
         console.log(isLight);
         if(isLight === 1 && LED.readSync()===0) {
             LED.writeSync(1);
+        } else if (isLight === 0 && LED.readSync()===1) {
+            LED.writeSync(0)
+
         }
         console.log(typeof isLight)
-        io.emit('light', isLight)
+        io.emit('lightChanged', isLight)
 
     });
 });
 
 
 
-server.listen(80, '10.1.1.198', () => {
-    console.log('server launched @ http://10.1.1.198:80 ');
+server.listen(8080, '10.1.1.53', () => {
+    console.log('server launched @ http://10.1.1.53:8080 ');
 });
 
 
