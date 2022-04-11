@@ -47,7 +47,7 @@ socket.on('lightChanged', (isLight) => {
 
     } else if (isLight === 1) {
         document.querySelector('#box').classList.add('lightOn')
-        console.log('light changed to off')
+        console.log('light changed to on')
 
     }
 console.log('light has been pressed')
