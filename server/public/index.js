@@ -29,9 +29,9 @@ document.querySelector('#button').onclick = () => {
 }
 
 changeLight.addEventListener('click', () => {
-    if(lightRn === 0) {
+    if(lightRN === 0) {
         socket.emit("lightClicked", 1)
-    } else if (lightRn === 1) {
+    } else if (lightRN === 1) {
         socket.emit("lightClicked", 0)
 
     }
